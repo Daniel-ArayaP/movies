@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SwiperModule} from 'swiper/angular';
 import { environment } from '../environments/environment';
+
+
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
@@ -51,6 +53,7 @@ import {SeoService} from './cores/services/seo.service';
     HomeComponent
   ],
   imports: [
+    
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -78,7 +81,10 @@ import {SeoService} from './cores/services/seo.service';
     MatPaginatorModule,
     MatSortModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    
+ 
 
   ],
   providers: [MoviesService, OnTVService, SeoService],
